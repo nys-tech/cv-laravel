@@ -1,11 +1,26 @@
 
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CVController;
-use App\Http\Controllers\PesanKontakController;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-Route::get('/', [CVController::class, 'index']);
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('pesan_kontaks', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama');
+            $table->string('email');
+            $table->string('subjek');
+            $table->text('pesan');
+            $table->timestamps();
+        });
+    }
 
-Route::post('/kontak', [PesanKontakController::class, 'store'])
-    ->name('kontak.store');
+    public function down(): void
+    {
+        Schema::dropIfExists('pesan_kontaks');
+    }
+};
