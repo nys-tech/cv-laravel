@@ -1,0 +1,344 @@
+
+@font-face {
+    font-family: "Cormorant Garamond";
+    src: url("../fonts/Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "DynaPuff";
+    src: url("../fonts/DynaPuff-VariableFont_wdth,wght.ttf");
+}
+
+:root {
+    --purple: #6b4594;
+    --dark-purple: #43275f;
+    --soft-purple: #eee6f7;
+    --pink: #f6dce9;
+    --white: #ffffff;
+    --background: #faf8ff;
+    --text: #30283a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+}
+
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(70, 40, 100, 0.06);
+}
+
+header h1 {
+    color: var(--purple);
+    font-family: "DynaPuff", sans-serif;
+    font-size: 23px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--purple);
+}
+
+/* HERO */
+.hero {
+    min-height: 600px;
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(120deg, #fff 60%, #f2eafa);
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text > p:first-child {
+    color: var(--purple);
+    letter-spacing: 5px;
+    font-size: 17px;
+}
+
+.hero-text h2 {
+    font-family: "DynaPuff", sans-serif;
+    font-size: 48px;
+    color: var(--dark-purple);
+    margin: 15px 0;
+}
+
+.hero-text p {
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.hero-image {
+    width: 320px;
+    height: 320px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    padding: 10px;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid white;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    background: var(--purple);
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--dark-purple);
+    transform: translateY(-3px);
+}
+
+/* GENERAL SECTION */
+section:not(.hero) {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: "DynaPuff", sans-serif;
+    color: var(--dark-purple);
+    font-size: 32px;
+    margin-bottom: 45px;
+}
+
+/* ABOUT */
+.about-content {
+    background: white;
+    padding: 35px;
+    border-left: 6px solid var(--purple);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(70, 40, 100, 0.06);
+    line-height: 1.8;
+}
+
+/* CARD */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #eee5f5;
+    box-shadow: 0 5px 20px rgba(70, 40, 100, 0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(70, 40, 100, 0.12);
+}
+
+.card h3 {
+    color: var(--purple);
+    font-family: "DynaPuff", sans-serif;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.card h4 {
+    margin-bottom: 10px;
+    color: #8c6ba9;
+}
+
+.card p {
+    line-height: 1.7;
+    margin: 8px 0;
+}
+
+.card span {
+    display: inline-block;
+    margin-top: 10px;
+    color: #9b76b6;
+}
+
+/* SKILLS */
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.skill-box {
+    background: white;
+    padding: 25px 15px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #eadff3;
+    transition: 0.3s;
+}
+
+.skill-box:nth-child(even) {
+    background: var(--soft-purple);
+}
+
+.skill-box:hover {
+    background: var(--pink);
+    transform: translateY(-4px);
+}
+
+.skill-box h3 {
+    color: var(--dark-purple);
+    font-size: 19px;
+}
+
+/* CONTACT */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.contact-text {
+    background: var(--soft-purple);
+    padding: 30px;
+    border-radius: 18px;
+    line-height: 2;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e5d8ef;
+    border-radius: 10px;
+    background: white;
+    font-family: inherit;
+    font-size: 17px;
+    outline: none;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border-color: var(--purple);
+}
+
+.contact-section textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.contact-section button {
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: var(--purple);
+    color: white;
+    font-family: inherit;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-section button:hover {
+    background: var(--dark-purple);
+}
+
+.contact-section form ~ p,
+.contact-section form ~ div {
+    margin-top: 15px;
+    color: var(--purple);
+}
+
+/* FOOTER */
+footer {
+    background: var(--dark-purple);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        font-size: 35px;
+    }
+
+    .hero-image {
+        width: 240px;
+        height: 240px;
+    }
+
+    .card-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
